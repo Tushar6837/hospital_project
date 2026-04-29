@@ -2,32 +2,38 @@
 <html>
 <head>
     <title>Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<h2>Patient List</h2>
+<div class="navbar">🏥 Hospital Management System</div>
 
-<table border="1">
-<tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Gender</th>
-</tr>
+<div class="container">
+    <div class="card">
 
-{% for p in patients %}
-<tr>
-    <td>{{ p[0] }}</td>
-    <td>{{ p[1] }}</td>
-    <td>{{ p[2] }}</td>
-    <td>{{ p[3] }}</td>
-</tr>
-{% endfor %}
+        <h2>Patient List</h2>
 
-</table>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
 
-<br>
-<a href="/">Back</a>
+            {% for p in patients %}
+            <tr>
+                <td>{{ p[0] }}</td>
+                <td>{{ p[1] }}</td>
+                <td>{{ p[2] }}</td>
+                <td>{{ p[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</div>
 
 </body>
 </html>
