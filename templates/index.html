@@ -1,89 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hospital Dashboard</title>
+{% extends 'base.html' %}
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+{% block content %}
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<div class="card">
+    <h2>🏥 Dashboard</h2>
+    <p style="text-align:center;">Welcome to Hospital Management System</p>
+</div>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
 
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <span class="navbar-brand">🏥 Hospital Management System</span>
-    </div>
-</nav>
-
-<!-- Dashboard -->
-<div class="container mt-4">
-
-    <div class="row g-4">
-
-        <!-- Patient -->
-        <div class="col-md-3">
-            <a href="/add_patient" class="text-decoration-none">
-                <div class="card text-white bg-primary shadow-lg p-3">
-                    <h4><i class="fa fa-user"></i> Add Patient</h4>
-                </div>
-            </a>
+    <a href="/add_patient">
+        <div class="card" style="width:200px; text-align:center;">
+            <h3>➕ Add Patient</h3>
         </div>
+    </a>
 
-        <!-- Doctor -->
-        <div class="col-md-3">
-            <a href="/add_doctor" class="text-decoration-none">
-                <div class="card text-white bg-success shadow-lg p-3">
-                    <h4><i class="fa fa-user-md"></i> Add Doctor</h4>
-                </div>
-            </a>
+    <a href="/view">
+        <div class="card" style="width:200px; text-align:center;">
+            <h3>📋 View Patients</h3>
         </div>
+    </a>
 
-        <!-- View Patients -->
-        <div class="col-md-3">
-            <a href="/view" class="text-decoration-none">
-                <div class="card text-dark bg-warning shadow-lg p-3">
-                    <h4><i class="fa fa-list"></i> Patients</h4>
-                </div>
-            </a>
+    <a href="/add_doctor">
+        <div class="card" style="width:200px; text-align:center;">
+            <h3>👨‍⚕️ Add Doctor</h3>
         </div>
+    </a>
 
-        <!-- View Doctors -->
-        <div class="col-md-3">
-            <a href="/doctors" class="text-decoration-none">
-                <div class="card text-white bg-info shadow-lg p-3">
-                    <h4><i class="fa fa-stethoscope"></i> Doctors</h4>
-                </div>
-            </a>
+    <a href="/doctors">
+        <div class="card" style="width:200px; text-align:center;">
+            <h3>🩺 View Doctors</h3>
         </div>
+    </a>
 
-        <!-- Appointment -->
-        <div class="col-md-3">
-            <a href="/appointment" class="text-decoration-none">
-                <div class="card text-white bg-danger shadow-lg p-3">
-                    <h4><i class="fa fa-calendar"></i> Appointment</h4>
-                </div>
-            </a>
+    <a href="/appointment">
+        <div class="card" style="width:200px; text-align:center;">
+            <h3>📅 Book Appointment</h3>
         </div>
+    </a>
 
-        <!-- View Appointments -->
-        <div class="col-md-3">
-            <a href="/appointments" class="text-decoration-none">
-                <div class="card text-white bg-secondary shadow-lg p-3">
-                    <h4><i class="fa fa-clock"></i> View Appointments</h4>
-                </div>
-            </a>
+    <a href="/appointments">
+        <div class="card" style="width:200px; text-align:center;">
+            <h3>⏰ View Appointments</h3>
         </div>
-
-    </div>
+    </a>
 
 </div>
 
-</body>
-</html>
+{% endblock %}
